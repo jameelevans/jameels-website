@@ -1,0 +1,105 @@
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+
+  10% {
+    transform: scale(1.1, 1) translateY(0);
+  }
+
+  30% {
+    transform: scale(.9, 1.1) translateY(-30px);
+  }
+
+  50% {
+    transform: scale(1.1, .95) translateY(0);
+  }
+
+  57% {
+    transform: scale(1, 1) translateY(-3px);
+  }
+
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    filter: brightness(180%);
+    
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.5);
+  }
+
+  50% {
+    transform: scale(1);
+    filter: brightness(100%);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+
+  70% {
+    transform: scale(1.3);
+  }
+
+  80% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1);
+    filter: brightness(180%);
+  }
+}
+
+@keyframes flipInY {
+	from {
+	  -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+	  transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+	  -webkit-animation-timing-function: ease-in;
+	  animation-timing-function: ease-in;
+	  opacity: 0;
+	}
+  
+	40% {
+	  -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+	  transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+	  -webkit-animation-timing-function: ease-in;
+	  animation-timing-function: ease-in;
+	}
+  
+	60% {
+	  -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+	  transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+	  opacity: 1;
+	}
+  
+	80% {
+	  -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+	  transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+	}
+  
+	to {
+	  -webkit-transform: perspective(400px);
+	  transform: perspective(400px);
+	}
+  }
+  
+  .flipInY {
+	backface-visibility: visible !important;
+	animation-name: flipInY;
+  }

@@ -1,0 +1,135 @@
+/*
+Theme Name: Jameel's WP Theme
+Author: Jameel Evans
+Description: Version 2 of Jameels custom Wordpress theme 
+Version: 1.0
+Text Domain: jameelevans.com
+ */
+
+ /**
+--------------------------------------------------------------
+*! TABLE OF CONTENTS:
+--------------------------------------------------------------
+*  TODO: Import scss modules in the correct area as needed
+*
+* * | Abstracts |
+*   Variables  --> All project variables
+*   Mixins --> All project mixins
+*   Functions --> All project functions
+*
+* * | Base |
+*   Typography   --> All things typography in one place
+*   Base --> Basic project definition
+*   Animations --> All project animations
+*   Utilities --> All utility helper classes
+*
+* * | Components |
+*   Buttons
+*   Featured Resources
+*   Featured Image
+*   Table of Contents
+*   Streak
+*   Education
+*   Tools
+*   Login
+*   Modal
+*   BG Video
+*   Quotes
+*
+*
+* * | Layout |
+*   Header
+*   Navigation
+*   Footer
+*
+* * | Pages |
+*   Front Page
+*   General
+*   Hire Me
+
+
+--------------------------------------------------------------*/
+
+//* --------| Abstracts |--------*//
+
+// * Variables
+@import "abstracts/variables";
+
+//  * Mixins
+@import "abstracts/mixins";
+
+//  * Functions
+// @import "abstracts/functions";
+
+
+//*-------| Base |--------*//
+
+ //  * Typography
+@import "base/typography";
+
+//  * Global
+@import "base/base";
+
+//  * Animations
+@import "base/animations";
+
+//  * Utilities
+@import "base/utilities";
+
+
+//*--------| Components |--------*//
+
+//  * Buttons
+@import "components/buttons";
+
+//  * Featured Resources
+@import "components/featured-resources";
+
+//  * Featured Image
+@import "components/featured-image";
+
+//  * Table of Contents
+@import "components/table-of-contents";
+
+//  * Streaks
+@import "components/streak";
+
+//  * Education
+@import "components/education";
+
+//  * Tools
+@import "components/tools";
+
+//  * Login
+@import "components/login";
+
+//  * Modal
+@import "components/modal";
+
+//  * Background Video
+@import "components/bg-video";
+
+//  * Quotes
+@import "components/quotes";
+
+
+//*--------| Layouts |--------*//
+//  * Header
+@import "layouts/header";
+
+//  * Navigation
+@import "layouts/navigation";
+
+//  * Navigation
+@import "layouts/footer";
+
+
+//*--------| Pages |--------*//
+//  * Front page
+@import "pages/front-page";
+
+//  * General
+@import "pages/general";
+
+//  * Hire Me
+@import "pages/hire-me";

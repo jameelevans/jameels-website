@@ -1,0 +1,214 @@
+/**
+*
+* * Everything that controls typography can be found in this file all in one place
+* TODO: Include custom downloaded font paths below --> Best for speed optimization
+*
+*/
+
+// Font variables
+$font-primary: 'Public Sans';
+
+// Primary font regular
+@font-face {
+	font-family: $font-primary;
+	font-display: swap;
+	font-variation-settings: "wght" 100-900, "ital" 0,1;
+}
+
+html {
+	// ! Makes 1 rem = 10px ( Simplifies dealing with rem to px calcs )
+	font-size: 62.5%; // 10px / 16px = 65.5% 
+
+	@include respond(large){
+		font-size: 50%;
+	}
+}
+
+body {
+	font-family: $font-primary;
+}
+
+.heading__2 {
+	margin: 1.5rem;
+	font-weight: 100;
+	text-align: center;
+
+	span {
+		font-weight: 600;
+	}
+
+	&--blue {
+		font-size: 2.6rem;
+		color: var(--color-secondary);
+	}
+
+	&--white {
+		font-size: 2.6rem;
+		color: var(--color-white);
+	}
+
+	&--blue-large {
+		color: var(--color-secondary);
+		font-size: 5rem;
+	}
+
+	&--white-large {
+		color: var(--color-white);
+		font-size: 5rem;
+	}
+
+	&--form {
+		font-size: 4rem;
+		text-align: left;
+		color: var(--color-secondary);
+		margin-left: 0;
+		font-weight: 200;
+	}
+}
+
+.heading__3 {
+	margin: 1.5rem;
+	font-size: 2.6rem;
+	font-weight: 300;
+	text-align: center;
+	color: var(--color-secondary);
+	position: relative;
+
+	&--form {
+		font-size: 3rem;
+		text-align: left;
+		color: var(--color-secondary);
+		margin-left: 0;
+		font-weight: 100;
+	}
+
+	&--blue-bg {
+		background: linear-gradient(to right bottom, var(--color-secondary), var(--color-secondary-light));
+		color: var(--color-white);
+		font-weight: 300;
+		font-size: $font-md;
+		padding: 1rem 2.5rem;
+	
+		span {
+			font-weight: 600;
+		}
+	}
+
+	&--blue-borders {
+		margin: 1.5rem;
+		font-size: 2.6rem;
+		font-weight: 300;
+		text-align: center;
+		color: var(--color-secondary);
+		position: relative;
+	
+		&::before {
+			content: '';
+			height: 2px;
+			display: block;
+			margin: 0 auto 2.5rem auto;
+			background-image: linear-gradient(90deg, var(--color-secondary), var(--color-secondary-light-2));
+			border: 0;
+			max-width: 85rem;
+			
+		}
+	
+		&::after {
+			content: '';
+			height: 2px;
+			display: block;
+			margin: 2.5rem auto;
+			background-image: linear-gradient(90deg, var(--color-secondary), var(--color-secondary-light-2));
+			border: 0;
+			max-width: 85rem;
+			
+		}
+	}
+}
+
+
+
+
+
+.heading__4 {
+margin: 1.5rem 0;
+font-size: $font-lg;
+
+@include respond(medium) {
+	font-size: 3vw;
+}
+
+@include respond(small) {
+	font-size: $font-xlg;
+}
+
+	&--blue {
+		color: var(--color-secondary);
+	}
+
+	&--white {
+		color: var(--color-white);
+		margin: .5rem 0;
+		font-size: 2rem;
+		font-weight: 300;
+	}
+
+	&--small {
+		margin: 1.2rem;
+		text-transform: uppercase;
+		color: var(--color-black);
+		font-size: $font-sm-md;
+		font-weight: 600;
+
+		@include respond(medium) {
+			font-size: 2vw;
+		}
+		
+		@include respond(small) {
+			font-size: 1.6rem;
+		}
+	}
+}
+
+.subheading {
+	font-size: $font-md;
+	font-weight: 200;
+	text-align: center;
+
+	&--orange {
+		color: var(--color-primary);
+	}
+
+	&--white {
+		color: var(--color-white);
+	}
+}
+
+.lead {
+	margin: 5rem auto 0 auto;
+	max-width: 85rem;
+    padding: 0 5rem;
+	
+	h2{
+		font-size: $font-xlg;
+		font-weight: 100;
+		color: var(--color-secondary);
+		margin-bottom: 1.5rem;
+	}
+
+	p {
+		font-size: 2rem;
+		font-weight: 100;
+		line-height: 3rem;
+
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+.login {
+    background-color: var(--color-secondary);
+  
+    & h1 a {
+      color: var(--color-secondary);
+      background-image: url("img/jameel-evans-admin-logo.png");
+      background-size: 150px;
+      height: 150px;
+      width: auto;
+      padding-bottom: 20px;
+    }
+  
+    & form {
+      border-radius: 10px;
+  
+      & label {
+        color: var(--color-secondary);
+        font-size: $font-md;
+        font-weight: 100;
+      }
+  
+      & input[type=checkbox]:checked:before {
+          color: var(--color-secondary);
+      }
+  
+      & .submit{
+        display: block;
+      }
+  
+      & .button-primary {
+        width: 120px;
+        background-color: var(--color-secondary);
+        border-color: color(var(--color-secondary b(+10%)));
+        text-shadow: 0 -1px 1px color(var(--color-secondary) b(+15%)),1px 0 1px color(var(--color-secondary) b(+15%)),0 1px 1px color(var(--color-secondary) b(+15%)),-1px 0 1px color(var(--color-secondary) b(+15%));
+        box-shadow: 0 1px 0 color(var(--color-secondary) b(+20%));
+      }
+  
+      & .button-primary:active,
+      & .button-primary:focus,
+      & .button-primary:hover {
+        background-color: color(var(--color-secondary) b(+7%));
+        border-color: color(var(--color-secondary) b(+15%));
+        text-shadow: 0 -1px 1px color(var(--color-secondary) b(+20%)),1px 0 1px color(var(--color-secondary) b(+20%)),0 1px 1px color(var(--color-secondary) b(+20%)),-1px 0 1px color(var(--color-secondary) b(+20%));
+        box-shadow: 0 1px 0 color(var(--color-secondary) b(+25%));
+      }
+  
+      & .forgetmenot label {
+        color: var(--color-secondary);
+      }
+    }
+  
+    & #backtoblog a,
+    & #nav a {
+      color: var(--color-white);
+  
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  
+    & .privacy-policy-page-link a {
+      color: var(--color-primary);
+      text-decoration: none;
+  
+      &:hover {
+        color: var(--color-white);
+      }
+    }
+  }
+  

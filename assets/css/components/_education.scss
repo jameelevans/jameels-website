@@ -1,0 +1,28 @@
+.education {
+    display:  grid;
+    grid-template-columns: repeat(3, 25rem);
+    text-align: center;
+    place-content: center;
+    margin-bottom: 8rem;
+
+    @include respond(small) {
+        grid-template-rows: repeat(3, max-content);
+        grid-template-columns: 100%;
+        grid-row-gap: 4rem;
+    }
+
+    &__icon {
+        fill: var(--color-primary);
+        width: 6rem;
+        height: 6rem;
+
+        @include respond(med-small) {
+            width: 8vw;
+            height: 8vw;
+        }
+    }
+
+    &__details {
+        font-size: $font-sm;
+    }
+}

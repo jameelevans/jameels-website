@@ -1,0 +1,189 @@
+.navigation {
+    &__checkbox {
+        display: none;
+    }
+
+    &__button {
+        background-color: var(--color-secondary);
+        height: 7rem;
+        width: 7rem;
+        position: fixed;
+        top: 3rem;
+        right: 4rem;
+        border-radius: 50%;
+        z-index: 2000;
+        box-shadow: 0 1rem 3rem rgba(var(--color-black-a), .1);
+        text-align: center;
+        cursor: pointer;
+
+        @include respond(small) {
+			top: 2rem;
+			right: 2rem;
+		}
+
+    }
+
+    &__background {
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 3.5rem;
+        right: 4.5rem;
+        background-image: linear-gradient(to right bottom, var(--color-secondary), var(--color-secondary-light) );
+        z-index: 1000;
+        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+
+        @include respond(small) {
+			top: 2.5rem;
+			right: 2.5rem;
+		}
+
+    }
+
+    &__nav {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1500;
+        display: grid;
+        place-items: center;
+        transition: opacity .8s cubic-bezier(0.68, -0.55, 0.265, 1.55), width .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+        //Hide navigation
+        opacity: 0;
+        width: 0;
+
+        
+    }
+
+    &__list {
+        display: grid;
+        grid-template-rows: repeat(5, max-content);
+        grid-row-gap: 2rem;
+        list-style: none;
+        text-align: center;
+    }
+
+    &__item {
+       
+    }
+
+    &__link {
+
+        &:link,
+        &:visited {
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: 100;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            color: var(--color-white);
+            text-decoration: none;
+            text-transform: uppercase;
+            //Slanted solid gradient 
+            background-image: linear-gradient(120deg, transparent, transparent 50%, var(--color-white) 50%);
+            //Gradient hidden off element
+            background-size: 230%;
+            transition: background-position .4s ease-in-out,
+                color .4s ease-in-out,
+                transform .4s ease-in-out;
+        }
+
+        &:hover,
+        &:active {
+            //Gradient slides in on hover
+            background-position: 100%;
+            color: var(--color-primary);
+            transform: translateX(1rem);
+        }
+
+        
+       
+    }
+
+       //FUNCTIONALITY
+       &__checkbox:checked ~ &__background {
+        transform: scale(60);
+    }
+
+    &__checkbox:checked ~ &__nav {
+        opacity: 1;
+        width: 100%;
+    }
+
+        //ICON
+        &__icon {
+            position: relative;
+            margin-top: 3.5rem;
+          
+
+            & {
+                width: 3rem;
+            }
+    
+            //Base styles for all three icon lines
+            &,
+            &::before,
+            &::after {
+                border-radius: 50%;
+                height: 3px;
+                background-color: var(--color-white);
+                display: inline-block;
+
+                @include respond(medium) {
+                    height: 2px;
+                }
+            }
+    
+            //Content must be set empty for sudo elements
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                width: 2rem;
+                left: .5rem;
+                transition: top .2s ease-in-out, transform .2s ease-in-out;
+            }
+    
+            //Individual positioining for 1st and 3rd icon lines
+            &::before { top: -.8rem; }
+            &::after { top: .8rem; }
+        }
+
+        &__button:hover &__icon::before {
+            top: -1rem;
+        }
+    
+        &__button:hover &__icon::after {
+            top: 1rem;
+        }
+
+        &__checkbox:not(:checked) + &__button &__icon  {
+            transform: rotate(130deg);
+        }
+    
+        //When checkbox is selected --> slecte its sibling, then select the buttons child (icon) then remove middle icon line
+        &__checkbox:checked + &__button &__icon  {
+            background-color: transparent;
+        }
+    
+        //Rotate top icon line on menu click
+        &__checkbox:checked + &__button &__icon::before  {
+            top: 0;
+           transform: rotate(135deg);
+        }
+    
+        //Rotate bottom icon line on menu click
+        &__checkbox:checked + &__button &__icon::after  {
+            top: 0;
+            transform: rotate(-135deg);
+        }
+
+        &__current-page {
+            color: var(--color-primary)!important;
+            background-color: var(--color-white);
+            transform: translateX(1rem);
+        }
+}

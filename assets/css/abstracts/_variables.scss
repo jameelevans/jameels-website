@@ -1,0 +1,42 @@
+/**
+*
+* * All variables for project can be found in this file
+*
+*/
+
+// * --------| Color variables |-------- *
+:root {
+    --color-primary: #f16123;
+    --color-primary-light: #f4814f;
+    --color-primary-dark: #b5491a;
+
+    --color-secondary: #07406c;
+    --color-secondary-a: 7, 64, 108;
+    --color-secondary-light: #396689;
+    --color-secondary-light-a: 57, 102, 137;
+    --color-secondary-light-2: #9cb3c4;
+
+    --color-white: #ffffff;
+    --color-grey: #b2b2b2;
+    --color-grey-light: #f1f1f1;
+    --color-grey-dark: #262626;
+    --color-grey-dark-a: 38, 38, 38;
+    --color-black: #1a1a1a;
+    --color-black-a: 26, 26, 26;
+
+    --color-twitter-blue: #00aced;
+    --color-facebook-blue: #3b5998;
+    --color-linkedin-blue: #0082ca;
+    --color-pinterest-red: #C92228;
+
+    --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
+    --shadow-light: 0 2rem 5rem rgba(0, 0, 0, .06);
+    --shadow-large-light: 0 1rem 3rem rgba(26, 26, 26, 0.1);
+}
+
+// * --------| Font variables |-------- *
+$font-sm: 1rem;
+$font-sm-md: 1.2rem;
+$font-md: 1.5rem;
+$font-lg: 1.8rem;
+$font-xlg: 2.5rem;

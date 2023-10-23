@@ -1,0 +1,40 @@
+// * Simple CSS Reset
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+// Turn off smooth scrolling for people prone to motion sickness
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+
+.container {
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+
+
+.main {
+    grid-area: main;
+}
+
+.main > section {
+    z-index: 3 ;
+}
+
+

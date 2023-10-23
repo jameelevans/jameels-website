@@ -1,0 +1,91 @@
+.table-of-contents {
+    background-image: linear-gradient(to right bottom, var(--color-grey-light), var(--color-grey));
+    padding: 2rem;
+    display: block;
+    margin: 5rem 0 0 0;
+    position: relative;
+    outline: 2px inset var(--color-secondary);
+    outline-offset: -10px;
+    opacity: .95;
+
+    &__summary {
+        background-color: var(--color-secondary);
+        padding: .5rem 1rem;
+        width: 12rem;
+        top: -25px;
+        left: 0;
+        position: absolute;
+        color: var(--color-white);
+        font-size: 1.3rem;
+        box-shadow: 5px 0px 0px var(--color-primary);
+    }
+
+    &__list {
+        list-style: none;
+        font-size: $font-md;
+        font-weight: 500;
+        color: var(--color-secondary);
+
+        a {
+            text-decoration: none;
+            font-size: inherit;
+            color: inherit;
+        }
+    }
+
+    &__item {
+        transition: transform .2s ease-in;
+
+        &:not(:last-child) {
+            padding-bottom: 1.5rem;
+        }
+
+        &::before {
+            content: "";
+            display: inline-block;
+            height: 1rem;
+            width: 1rem;
+            margin-right: .7rem;
+            background-image: url(assets/img/chevron-right.svg);
+            background-size: cover;
+            background-color: var(--color-primary);
+            mask-image: url(assets/img/chevron-right.svg);
+            mask-size: cover;
+            background-image: none;
+        }
+
+        &:hover {
+            transform: translateX(.5rem);
+        }
+    }
+
+    &__sublist {
+        list-style: none;
+        font-weight: 300;
+        margin-top: -1rem;
+    }
+
+    &__subitem {
+        margin-left: 1.5rem;
+        margin-bottom: .5rem;
+        transition: transform .2s ease-in;
+
+        &:hover {
+            transform: translateX(.5rem);
+        }
+
+        &::before {
+            content: "";
+            display: inline-block;
+            height: 1rem;
+            width: 1rem;
+            margin-right: .7rem;
+            background-image: url(assets/img/chevron-right.svg);
+            background-size: cover;
+            background-color: var(--color-primary);
+            mask-image: url(assets/img/chevron-right.svg);
+            mask-size: cover;
+            background-image: none;
+        }
+    }
+}

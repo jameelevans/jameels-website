@@ -1,0 +1,142 @@
+.streak {
+    position: relative;
+    margin-bottom: 11rem;
+
+    &__heading {
+        text-align: center;
+
+        &--main {
+            margin: 1.5rem;
+            font-size: 4rem;
+            font-weight: 600;
+        }
+    }
+
+    &__bg {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        width: 100%;
+        color: var(--color-white);
+        padding: 5rem 10rem;
+        clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+        backface-visibility: visible;
+
+        @include respond(medium) {
+            padding: 5rem 3rem;
+        }
+
+        &--blue {
+            background-image: linear-gradient(to right, var(--color-secondary), var(--color-secondary-light));
+        }
+
+        &--black {
+            background-image: linear-gradient(to right, var(--color-black), var(--color-grey-dark));
+        }
+
+        .streak-header {
+            font-size: 4.5rem;
+            display: grid;
+            padding: 3rem 0;
+            grid-template-columns: repeat(2, max-content);
+            align-items: center;
+            grid-column-gap: .5rem;
+
+            @include respond(medium) {
+                font-size: 5vw;
+            }
+
+            &__icon {
+                fill: var(--color-white);
+                height: 7rem;
+                width: 7rem;
+                margin-right: 2rem;
+
+                @include respond(medium) {
+                    height: 5rem;
+                    width: 5rem;
+                }
+            }
+        }
+    }
+
+    &__featured {
+        display: grid;
+        grid-template-rows: repeat(3, max-content);
+        width: 100%;
+        color: var(--color-white);
+        place-items: center;
+        padding: 10rem 0;
+        clip-path: polygon(0 0, 100% 5%, 100% 95%, 0% 100%);
+        backface-visibility: visible;
+
+        @include respond(small) {
+            clip-path: polygon(0 0, 100% 3%, 100% 97%, 0% 100%);
+        }
+    }
+
+    &__gallery {
+        position: absolute;
+        right: 4rem;
+        padding: 1rem;
+        height: auto;
+        width: 30vw;
+        top: 5rem;
+
+        @include respond(small) {
+            right: 50%;
+            transform: translateX(50%);
+            width: 70vw;
+            top: unset;
+            bottom: 10rem;
+        }
+
+        &__image {
+            position: absolute;
+            width: 18vw;
+            transition: outline .2s ease-in,
+                outline-offset .2s ease-in,
+                transform .2s ease-in,
+                box-shadow .2s ease-in,
+                z-index .2s ease-in;
+            box-shadow: 0 1.5rem 4rem rgba(var(--color-black-a), .4);
+            border-radius: 3px;
+
+            @include respond(small) {
+                width: 20rem;
+            }
+
+            //Move image forward on hover
+            &:hover {
+                outline: .5rem solid var(--color-primary);
+                outline-offset: 5px;
+                transform: scale(1.2) translateY(-.5rem);
+                box-shadow: 0 2.5rem 4rem rgba(var(--color-black-a), .5);
+                z-index: 20;
+
+            }
+
+            &--1 {
+                top: -5.6rem;
+                left: -3.5rem;
+
+                @include respond(small) {
+                    left: -0.5vw;
+                }
+            }
+
+            &--2 {
+                right: 2.5rem;
+                top: -1rem;
+
+                @include respond(small) {
+                    right: 0.5vw;
+                }
+            }
+        }
+
+        //When gallery is hovered select galery image that is not hovered
+        &:hover &__image:not(:hover) {
+            transform: scale(.95);
+        }
+    }
+}

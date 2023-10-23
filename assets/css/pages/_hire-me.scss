@@ -1,0 +1,53 @@
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 5rem;
+    padding: 4rem;
+    background-color: #fff;
+    z-index: 10;
+    position: relative;
+
+    @include respond(medium) {
+        grid-template-columns: 100%;
+        grid-column-gap: none;
+        grid-template-rows: repeat(2, max-content);
+        grid-row-gap: 2rem;
+        
+        padding: 2rem;
+    }
+
+    &__divider{
+        background-color: var(--color-secondary);
+        display: inline-block;
+        height: 4px;
+        margin: 20px 0;
+        width: 40px;
+    }
+    &__details {
+        display: grid;
+        grid-auto-rows: max-content;
+        grid-row-gap: 1.5rem;
+        font-size: 1.6rem;
+    }
+
+    &__content {
+
+    }
+    p {
+       font-size: 1.7rem;
+       font-weight: 200;
+       line-height: 1.7;
+
+       & .limited {
+           color: red;
+       }
+
+       & .available {
+        color: green;
+    }
+    }
+}
+
+.wpforms-field-label {
+    font-weight: 400!important;
+}

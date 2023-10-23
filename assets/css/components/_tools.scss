@@ -1,0 +1,58 @@
+.tools {
+    display: grid;
+    grid-template-rows: repeat(2, max-content);
+    place-content: center;
+    padding: 5rem;
+
+    &:nth-of-type(odd) {
+        background-color: var(--color-grey-light);
+        clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+        padding: 10rem 5rem;
+    }
+
+    &__header {}
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(3, 20rem);
+        grid-column-gap: 5%;
+        max-width: 95rem;
+        place-content: center;
+
+        @include respond(small) {
+            grid-template-rows: repeat(3, max-content);
+            grid-row-gap: 4rem;
+            grid-template-columns: 100%;
+            grid-column-gap: 0;
+        }
+
+        .tool {
+
+            p {
+                font-size: 1.4rem;
+                padding: 0;
+            }
+
+            &__btn {
+                font-size: $font-md;
+                text-decoration: none;
+                color: var(--color-secondary);
+                position: relative;
+                transition: filter .3s ease-in;
+
+                &:hover {
+                    filter: brightness(200%);
+                }
+            }
+
+            &__icon {
+                width: 1.5rem;
+                height: 1.5rem;
+                fill: var(--color-secondary);
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}

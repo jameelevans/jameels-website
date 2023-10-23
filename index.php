@@ -19,7 +19,7 @@ get_header(); ?>
         <!-- Featured posts streak -->
         <div class="streak">
             <div class="streak__featured streak__bg--blue">
-                <?php echo featured_posts() ?>
+                <?php echo display_all_posts() ?>
             </div>
         </div> <!-- .Featured posts streak -->
 

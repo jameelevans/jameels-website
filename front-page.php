@@ -73,10 +73,10 @@ get_header();
 					For years i’ve been working with WordPress - the world’s leading CMS system which powers over a 1/3 of the internet. I am confident I can take your WordPress project to new levels and increase your brand visibility. Whether you need to develop it, secure it, maintain it or fix it - I’m confident that I’m your guy. 
 				</p>
 
-				<div class="wordpress__buttons">
-					<a href="<?php echo esc_url( site_url( '/hire-me' ) ); ?>" class="wordpress__link">I NEED A WORDPRESS WEBSITE</a>
-					<a href="<?php echo esc_url( site_url( '/hire-me' ) ); ?>" class="wordpress__link">I NEED HELP WITH WORDPRESS</a>
-				</div>
+				<!--<div class="wordpress__buttons">
+					<a href="<?php //echo esc_url( site_url( '/hire-me' ) ); ?>" class="wordpress__link">I NEED A WORDPRESS WEBSITE</a>
+					<a href="<?php //echo esc_url( site_url( '/hire-me' ) ); ?>" class="wordpress__link">I NEED HELP WITH WORDPRESS</a>
+				</div>-->
 				<div class="wordpress__tech">
 					<?php
 					// Display WordPress tech svg icons

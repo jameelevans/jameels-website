@@ -350,6 +350,35 @@ function featured_posts($args = NULL) {
 <?php }
 // .Display featured posts based on acf field options
 
+// Custom function to display all posts
+function display_all_posts() {
+  ?>
+  <div class="<?php if (is_home()) { echo 'streak__heading'; } else { echo 'featured-resources__heading'; } ?>">
+    <h2 class="<?php if (is_home()) { echo 'streak__heading--main'; } else { echo 'heading__2 heading__2--white'; } ?>">
+      Useful <span>Resources</span>
+    </h2>
+    <p class="subheading subheading--white">Blog posts authored by Jameel with easy-to-navigate table of content</p>
+  </div>
+  <div class="featured-resources__container">
+    <?php
+    // Show all posts
+    $all_posts = new WP_Query(array('posts_per_page' => -1)); // -1 means all posts
+    if ($all_posts->have_posts()):
+      while ($all_posts->have_posts()):
+        $all_posts->the_post();
+        get_template_part('template-parts/content', 'featured');
+      endwhile;
+      wp_reset_postdata();
+    endif;
+    ?>
+  </div>
+
+  
+  <?php
+}
+
+// Hook this function into your template file where you want to display all posts
+
 //* 17. Display inline svg icon from sprite sheet with custom class
 function svg_icon($class, $icon) { ?>
 <svg class="<?php echo $class ?>">

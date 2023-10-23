@@ -11,7 +11,7 @@
     <!-- cta -->
     <div class="cta">
         <p class="cta__header">Let's get started on your WordPress project today</p>
-        <a class="cta__link" href="<?php echo esc_url( site_url( '/hire-me' ) ); ?>">Get in touch</a>
+        <a class="cta__link" href="<?php echo esc_url( site_url( '/combat-to-coding' ) ); ?>">Learn More About Me</a>
     </div><!-- .cta -->
 
     <!-- Contact section -->

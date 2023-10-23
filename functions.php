@@ -182,8 +182,7 @@ function site_navigation() { ?>
       <li class="navigation__item">
         <a href="<?php echo esc_url( site_url( '/combat-to-coding' ) ); ?>" class="navigation__link<?php if(is_page('combat-to-coding')){echo ' navigation__current-page';} ?>">From Combat to Coding</a>
       </li>
-      <li class="navigation__item">
-        <a href="<?php echo esc_url( site_url( '/hire-me' ) ); ?>" class="navigation__link<?php if(is_page('hire-me')){echo ' navigation__current-page';} ?>">Hire Me</a></li>
+      
     </ul>
   </nav>
 </div><!-- .navigation -->

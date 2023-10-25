@@ -7,7 +7,7 @@
     &:nth-of-type(odd) {
         background-color: var(--color-grey-light);
         clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
-        padding: 10rem 5rem;
+        padding: 20rem 5rem;
     }
 
     &__header {}
@@ -15,7 +15,7 @@
     &__content {
         display: grid;
         grid-template-columns: repeat(3, 20rem);
-        grid-column-gap: 5%;
+        gap: 5rem;
         max-width: 95rem;
         place-content: center;
 

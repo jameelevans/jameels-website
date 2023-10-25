@@ -336,7 +336,7 @@ function featured_posts($args = NULL) {
     ?>
 </div>
 
-<a href="<?php if (is_home()) { echo esc_url( site_url( '/resources-all' ));} else {echo esc_url( site_url( '/resources' ) );} ?>"
+<a href="<?php echo esc_url( site_url( '/resources' ) ); ?>"
   class="btn btn__cta">
   <?php if (is_home()) {
     echo 'See all my resources&nbsp;';

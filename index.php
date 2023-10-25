@@ -19,13 +19,33 @@ get_header(); ?>
         <!-- Featured posts streak -->
         <div class="streak">
             <div class="streak__featured streak__bg--blue">
-                <?php echo display_all_posts() ?>
+                <?php echo featured_posts() ?>
             </div>
         </div> <!-- .Featured posts streak -->
 
         <div class="tools">
             <div class="tools__header">
-                <h3 class="heading__3--blue-borders">Development Tools</h3>
+                <h2 class="heading__2 heading__2--blue">Web Development <span>Resources</span></h2>
+                <div class="featured-resources__container">
+                    <?php
+                    // Show all posts
+                    $webdevelopment = get_category_by_slug( 'web-development' );
+
+                    $all_posts = new WP_Query(array(
+                        'cat' => $webdevelopment->term_id,
+                        'posts_per_page' => -1
+
+                    )); // -1 means all posts
+                    if ($all_posts->have_posts()):
+                    while ($all_posts->have_posts()):
+                        $all_posts->the_post();
+                        get_template_part('template-parts/content', 'featured');
+                    endwhile;
+                    wp_reset_postdata();
+                    endif;
+                    ?>
+                </div>
+                <h3 class="heading__3--blue-borders">Web Development Tools</h3>
             </div>
 
             <div class="tools__content ">
@@ -56,15 +76,8 @@ get_header(); ?>
                         </svg>
                     </a>
                 </div>
-            </div>
-        </div>
+                
 
-        <div class="tools">
-            <div class="tools__header">
-                <h3 class="heading__3--blue-borders">HTML Tools</h3>
-            </div>
-
-            <div class="tools__content ">
                 <div class="tool">
                     <h4 class="heading__4 heading__4--blue">Emmet</h4>
                     <p>With Emmet you can quickly write a bunch of code, wrap code with new tags, quickly traverse and select important code parts and more!</p>
@@ -92,15 +105,7 @@ get_header(); ?>
                         </svg>
                     </a>
                 </div>
-            </div>
-        </div>
 
-        <div class="tools">
-            <div class="tools__header">
-                <h3 class="heading__3--blue-borders">CSS Tools</h3>
-            </div>
-
-            <div class="tools__content ">
                 <div class="tool">
                     <h4 class="heading__4 heading__4--blue">Clippy from Bennett Feely</h4>
                     <p>A usful visual CSS clip path maker</p>
@@ -128,16 +133,39 @@ get_header(); ?>
                         </svg>
                     </a>
                 </div>
+                
             </div>
         </div>
 
+        
+
         <div class="tools">
             <div class="tools__header">
-                <h3 class="heading__3--blue-borders">WordPress Tools</h3>
+                <h2 class="heading__2 heading__2--blue">Wordpress <span>Resources</span></h2>
+                <div class="featured-resources__container">
+                    <?php
+                    // Show all posts
+                    $wordpress = get_category_by_slug( 'wordpress' );
+
+                    $all_posts = new WP_Query(array(
+                        'cat' => $wordpress->term_id,
+                        'posts_per_page' => -1
+
+                    )); // -1 means all posts
+                    if ($all_posts->have_posts()):
+                    while ($all_posts->have_posts()):
+                        $all_posts->the_post();
+                        get_template_part('template-parts/content', 'featured');
+                    endwhile;
+                    wp_reset_postdata();
+                    endif;
+                    ?>
+                </div>
+                <h3 class="heading__3--blue-borders">Wordpress Tools</h3>
             </div>
 
             <div class="tools__content ">
-                <div class="tool">
+            <div class="tool">
                     <h4 class="heading__4 heading__4--blue">WP Beginner</h4>
                     <p>WPBeginner is a free WordPress resource site for Beginners.</p>
                     <a href="https://www.wpbeginner.com/" class="tool__btn" target="_blank">
@@ -164,11 +192,32 @@ get_header(); ?>
                         </svg>
                     </a>
                 </div>
+                
             </div>
         </div>
 
         <div class="tools">
             <div class="tools__header">
+                <h2 class="heading__2 heading__2--blue">SEO <span>Resources</span></h2>
+                <div class="featured-resources__container">
+                    <?php
+                    // Show all SEO posts
+                    $seo = get_category_by_slug( 'seo' );
+
+                    $all_posts = new WP_Query(array(
+                        'cat' => $seo->term_id,
+                        'posts_per_page' => -1
+
+                    )); // -1 means all posts
+                    if ($all_posts->have_posts()):
+                    while ($all_posts->have_posts()):
+                        $all_posts->the_post();
+                        get_template_part('template-parts/content', 'featured');
+                    endwhile;
+                    wp_reset_postdata();
+                    endif;
+                    ?>
+                </div>
                 <h3 class="heading__3--blue-borders">SEO Tools</h3>
             </div>
 
@@ -184,8 +233,7 @@ get_header(); ?>
                 </div>
                 <div class="tool">
                     <h4 class="heading__4 heading__4--blue">Moz | Link Explorer</h4>
-                    <p>This highly accurate link tool lets you check the backlink profile and Domain Authority of any site.
-Link Explorer</p>
+                    <p>This highly accurate link tool lets you check the backlink profile and Domain Authority of any site. Link Explorer</p>
                     <a href="https://moz.com/link-explorer" class="tool__btn" target="_blank">
                         Learn more&nbsp; <svg class="tool__icon">
                             <use xlink:href="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/sprite.svg' ); ?>#icon-circle-right"></use>
@@ -201,16 +249,37 @@ Link Explorer</p>
                         </svg>
                     </a>
                 </div>
+                
             </div>
         </div>
 
         <div class="tools">
             <div class="tools__header">
-                <h3 class="heading__3--blue-borders">Font Resources</h3>
+                <h2 class="heading__2 heading__2--blue">Design <span>Resources</span></h2>
+                <div class="featured-resources__container">
+                    <?php
+                    // Show all SEO posts
+                    $design = get_category_by_slug( 'design-process' );
+
+                    $all_posts = new WP_Query(array(
+                        'cat' => $design->term_id,
+                        'posts_per_page' => -1
+
+                    )); // -1 means all posts
+                    if ($all_posts->have_posts()):
+                    while ($all_posts->have_posts()):
+                        $all_posts->the_post();
+                        get_template_part('template-parts/content', 'featured');
+                    endwhile;
+                    wp_reset_postdata();
+                    endif;
+                    ?>
+                </div>
+                <h3 class="heading__3--blue-borders">Design Tools</h3>
             </div>
 
             <div class="tools__content ">
-                <div class="tool">
+            <div class="tool">
                     <h4 class="heading__4 heading__4--blue">Google Fonts</h4>
                     <p>Making the web more beautiful, fast, and open through great typography.</p>
                     <a href="https://fonts.google.com/" class="tool__btn" target="_blank">
@@ -237,15 +306,7 @@ Link Explorer</p>
                         </svg>
                     </a>
                 </div>
-            </div>
-        </div>
 
-        <div class="tools">
-            <div class="tools__header">
-                <h3 class="heading__3--blue-borders">Design Tools</h3>
-            </div>
-
-            <div class="tools__content ">
                 <div class="tool">
                     <h4 class="heading__4 heading__4--blue">Coverr</h4>
                     <p>Beautiful Free Stock Video Footage</p>
@@ -274,7 +335,64 @@ Link Explorer</p>
                     </a>
                 </div>
             </div>
+                
         </div>
+
+        <div class="tools">
+            <div class="tools__header">
+                <h2 class="heading__2 heading__2--blue">Business <span>Resources</span></h2>
+                <div class="featured-resources__container">
+                    <?php
+                    // Show all SEO posts
+                    $business = get_category_by_slug( 'business' );
+
+                    $all_posts = new WP_Query(array(
+                        'cat' => $business->term_id,
+                        'posts_per_page' => -1
+
+                    )); // -1 means all posts
+                    if ($all_posts->have_posts()):
+                    while ($all_posts->have_posts()):
+                        $all_posts->the_post();
+                        get_template_part('template-parts/content', 'featured');
+                    endwhile;
+                    wp_reset_postdata();
+                    endif;
+                    ?>
+                </div>
+             
+            </div>
+        </div>
+
+        <div class="tools">
+            <div class="tools__header">
+                <h2 class="heading__2 heading__2--blue">Inspirational <span>Quotes</span></h2>
+                <div class="featured-resources__container">
+                    <?php
+                    // Show all SEO posts
+                    $quotes = get_category_by_slug( 'quotes' );
+
+                    $all_posts = new WP_Query(array(
+                        'cat' => $quotes->term_id,
+                        'posts_per_page' => -1
+
+                    )); // -1 means all posts
+                    if ($all_posts->have_posts()):
+                    while ($all_posts->have_posts()):
+                        $all_posts->the_post();
+                        get_template_part('template-parts/content', 'featured');
+                    endwhile;
+                    wp_reset_postdata();
+                    endif;
+                    ?>
+                </div>
+             
+            </div>
+        </div>
+
+     
+
+       
     </section> <!-- .Main content area-->
 
     <!-- Reccomendations section -->
